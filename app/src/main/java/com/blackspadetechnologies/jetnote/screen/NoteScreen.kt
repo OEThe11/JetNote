@@ -26,6 +26,7 @@ import com.blackspadetechnologies.jetnote.components.NoteButton
 import com.blackspadetechnologies.jetnote.components.NoteInputText
 import com.blackspadetechnologies.jetnote.data.NotesDataSource
 import com.blackspadetechnologies.jetnote.model.Note
+import com.blackspadetechnologies.jetnote.util.formatDate
 import java.time.format.DateTimeFormatter
 
 @ExperimentalComposeUiApi
@@ -133,7 +134,7 @@ fun NoteRow(
             Text(text = note.title,
                 style = MaterialTheme.typography.subtitle2)
             Text(text = note.description, style = MaterialTheme.typography.subtitle1)
-            Text(text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")),
+            Text(text = formatDate(note.entryDate.time),
                     style = MaterialTheme.typography.caption)
 
 
